@@ -43,7 +43,7 @@ for i in range(20):
         # Flatten the list of native contacts
         NC_list = np.concatenate(NC_selected)
         
-        # Create a boolean list for native contacts greater than 0.75
+        # Create a boolean list for native contacts greater than 0.80
         boolean_list = NC_list > 0.8
         feat = list(map(int, boolean_list))
         

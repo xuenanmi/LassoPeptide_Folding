@@ -53,7 +53,7 @@ def calculate_msm(peptide, index):
             msm = pyemma.msm.estimate_markov_model(dtrajs, lag=msm_lag_time)
             
             # Save MSM model
-            msm_file = f'{peptide}/MSM/MSM_MSM_C_{cluster_number}_lt_{tica_lag_time}_ticdim_{tic_dim}.pkl'
+            msm_file = f'{peptide}/MSM/MSM-MSM_C_{cluster_number}_lt_{tica_lag_time}_ticdim_{tic_dim}.pkl'
             with open(msm_file, 'wb') as f:
                 pickle.dump(msm, f)
 

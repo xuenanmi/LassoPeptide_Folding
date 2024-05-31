@@ -43,6 +43,9 @@ Contains scripts to identify and cluster kinetic folding pathways.
 - `optimize_cluster_number_by_silhouette_analysis.py`: Optimize the cluster number used for performing k-means clustering on VAE latent space of all pathways.  
 - `plot_pathways_on_latent_space.py`: Visualize the clustering results of all pathways on VAE latent space and plot train-validation loss of VAE model.
 
+## Dependency
+To set up the environment for this project, use the provided `environment.yml` file. This file contains all necessary dependencies.
+
 ## Authors
 
 - **Xuenan Mi** - [xmi4@illinois.edu](mailto:xmi4@illinois.edu)

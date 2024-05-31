@@ -15,7 +15,7 @@ This repository contains all the source code for analyzing the lasso folding mol
 
 Contains scripts to:
 - Featurize MD trajectory data using all pair-wise residue-residue distances <br>
-  **Featurization Script**: `feature_calculation.py`, calculate all pair-wise residue-resiude distance of all trajectory data
+  --**Featurization Script**: `feature_calculation.py`, calculate all pair-wise residue-resiude distance of all trajectory data
 - Construct and validate Markov State Models for each lasso peptide
 
 ### Thermodynamics_Kinetics

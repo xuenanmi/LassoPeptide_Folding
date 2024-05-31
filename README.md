@@ -50,7 +50,7 @@ To set up the environment for this project, use the provided `environment.yml` f
 
 - **Xuenan Mi** - [xmi4@illinois.edu](mailto:xmi4@illinois.edu)
 
-## Contributing
+%## Contributing
 
 Contributions are welcome! Please create an issue to discuss the changes you wish to make.
 

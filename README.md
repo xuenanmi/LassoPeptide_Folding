@@ -16,8 +16,8 @@ This repository contains all the source code for analyzing the lasso folding mol
 Contains scripts to:
 - Featurize MD trajectory data using all pair-wise residue-resid 
 - Construct and validate Markov State Models for each lasso peptideue distances <br>
-◦ **Featurization Script**: `feature_calculation.py`, calculate all pair-wise residue-residue distances of all trajectory data
-◦ **MSM script**: `optimize_MSM_hyperparameter.py`, perform a grid search to optimize the hyperparameter of MSM based on VAMP2 score
+◦ **Featurization Script**: `feature_calculation.py`, calculate all pair-wise residue-residue distances of all trajectory data <br>
+◦ **MSM script**: `optimize_MSM_hyperparameter.py`, perform a grid search to optimize the hyperparameter of MSM based on VAMP2 score <br>
 
 - Construct and validate Markov State Models for each lasso peptide
 

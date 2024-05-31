@@ -26,6 +26,14 @@ Contains scripts to:
 ### Thermodynamics_Kinetics
 
 Contains scripts to perform thermodynamic and kinetic analysis of the 20 lasso peptides.
+- Thermodynamics analysis <br>
+  `NativeContacts_calculation.py`, calculate the fraction of native contacts of each microstate (cluster) <br>
+  `thermodynamics_analysis.py`, calculate the percentage of lasso-like topology formation (Native Contacts > 0.8)
+- Kinetic analysis <br>
+  `kinetics_analysis.py`, estimate the transition timescale from unfolded states to folded states by MFPT (mean first passage time)
+- Plot MSM-weighted free energy landscape <br>
+  'Free_energy_landscape_plot.py', project MD trajectory data on tIC 1 and tIC2, and project the average native contact value of each microstates on the landscape
+
 
 
 ### Kinetic_pathways_analysis

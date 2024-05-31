@@ -25,13 +25,7 @@ Contains scripts to perform thermodynamic and kinetic analysis of the 20 lasso p
 
 Contains scripts to identify and cluster kinetic folding pathways.
 
-## Installation
 
-To use the scripts in this repository, follow these steps:
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/your_username/lasso_folding.git
 
 # Authors:
 Xuenan Mi,

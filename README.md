@@ -17,7 +17,8 @@ Contains scripts to:
 - Featurize MD trajectory data using all pair-wise residue-resid 
 - Construct and validate Markov State Models for each lasso peptideue distances <br>
 ◦ **Featurization Script**: `feature_calculation.py`, calculate all pair-wise residue-residue distances of all trajectory data
- 
+◦ **MSM script**: `optimize_MSM_hyperparameter.py`, perform a grid search to optimize the hyperparameter of MSM based on VAMP2 score
+
 - Construct and validate Markov State Models for each lasso peptide
 
 ### Thermodynamics_Kinetics

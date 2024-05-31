@@ -23,11 +23,10 @@ Contains scripts to:
   `MSM_population_of_cluster.py`, evaluate the stationary distribution of each cluster <br>
   `bootstrapping_MSM.py`, estimate relative errors through bootstrapping, 80% of trajectories are randomly selected for each bootstrap sample <br>
 
-- Construct and validate Markov State Models for each lasso peptide
-
 ### Thermodynamics_Kinetics
 
 Contains scripts to perform thermodynamic and kinetic analysis of the 20 lasso peptides.
+
 
 ### Kinetic_pathways_analysis
 

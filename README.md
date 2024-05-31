@@ -54,6 +54,6 @@ To set up the environment for this project, use the provided `environment.yml` f
 
 Contributions are welcome! Please create an issue to discuss the changes you wish to make.
 
-## License
+
 
 

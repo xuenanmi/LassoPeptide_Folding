@@ -19,7 +19,10 @@ Contains scripts to:
   
 - Construct and validate Markov State Models for each lasso peptideue distances <br>
   `optimize_MSM_hyperparameter.py`, perform a grid search to optimize the hyperparameter of MSM based on VAMP2 score <br> and construct MSM using each hyperparameter combinations <br>
-  `MSM_reweighted_population_analysis.py`,  evaluate the stationary distribution from the MSM and its deviation from the original distribution
+  `MSM_reweighted_population_analysis.py`,  evaluate the stationary distribution from the MSM and its deviation from the original distribution <br>
+  `MSM_population_of_cluster.py`, evaluate the stationary distribution of each cluster <br>
+  `bootstrapping_MSM.py`, estimate relative errors through bootstrapping, 80% of trajectories are randomly selected for each bootstrap sample <br>
+
 - Construct and validate Markov State Models for each lasso peptide
 
 ### Thermodynamics_Kinetics

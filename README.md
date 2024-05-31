@@ -35,11 +35,11 @@ Contains scripts to perform thermodynamic and kinetic analysis of the 20 lasso p
   `Free_energy_landscape_plot.py`, project MD trajectory data on tIC 1 and tIC2, and project the average native contact value of each microstates on the landscape
 
 ### Kinetic_pathways_analysis
-`kinetic_pathway_from_TPT.py`, obtain all kinetic pathways from unfolded to folded state based on TPT (Transition Path Theory)
-`project_pathway_on_tICA_space.py`, project each pathway on low dimensional subspace (tICA space)
-`train_VAE_cluster_pathways.py`, train VAE model to learn the latent space of each pathway
-`optimize_cluster_number_by_silhouette_analysis.py`, optimize the cluster number which is used for performing kmeans cluster on VAE latent space of all pathways
-`plot_pathways_on_latent_space.py`, visualize the clustering results of all pathways on VAE latent space and plot train-validation loss of VAE model
+`kinetic_pathway_from_TPT.py`, obtain all kinetic pathways from unfolded to folded state based on TPT (Transition Path Theory) <br>
+`project_pathway_on_tICA_space.py`, project each pathway on low dimensional subspace (tICA space) <br>
+`train_VAE_cluster_pathways.py`, train VAE model to learn the latent space of each pathway <br>
+`optimize_cluster_number_by_silhouette_analysis.py`, optimize the cluster number which is used for performing kmeans cluster on VAE latent space of all pathways <br>
+`plot_pathways_on_latent_space.py`, visualize the clustering results of all pathways on VAE latent space and plot train-validation loss of VAE model <br>
 
 Contains scripts to identify and cluster kinetic folding pathways.
 

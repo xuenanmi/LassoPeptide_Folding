@@ -32,9 +32,7 @@ Contains scripts to perform thermodynamic and kinetic analysis of the 20 lasso p
 - Kinetic analysis <br>
   `kinetics_analysis.py`, estimate the transition timescale from unfolded states to folded states by MFPT (mean first passage time)
 - Plot MSM-weighted free energy landscape <br>
-  'Free_energy_landscape_plot.py', project MD trajectory data on tIC 1 and tIC2, and project the average native contact value of each microstates on the landscape
-
-
+  `Free_energy_landscape_plot.py`, project MD trajectory data on tIC 1 and tIC2, and project the average native contact value of each microstates on the landscape
 
 ### Kinetic_pathways_analysis
 

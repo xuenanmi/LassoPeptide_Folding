@@ -19,6 +19,7 @@ lasso_names = [
 lag_times = [250, 300, 300, 300, 250, 300, 250, 300, 300, 300, 300, 300, 350, 300, 300, 350, 300, 300, 250, 250]
 cluster_numbers = [400, 100, 100, 400, 100, 200, 500, 100, 400, 200, 400, 400, 300, 400, 700, 200, 100, 200, 300, 400]
 tic_dims = [4, 8, 8, 6, 10, 8, 8, 10, 8, 8, 10, 10, 10, 8, 6, 10, 6, 6, 10, 10]
+msm_lag_times = [500, 800, 1250, 400, 600, 600, 550, 800, 750, 600, 1000, 300, 800, 400, 650, 600, 400, 550, 700, 500]
 
 # Ensure the bootstrapping directory exists for each peptide
 for peptide in lasso_names:
@@ -48,7 +49,7 @@ for i, peptide in enumerate(lasso_names):
         bt_kmeans = [dtrajs[k] for k in index[:N]]
 
         # Estimate the Markov model
-        msm = pyemma.msm.estimate_markov_model(bt_kmeans, lag=lag_times[i])
+        msm = pyemma.msm.estimate_markov_model(bt_kmeans, lag=msm_lag_times[i])
 
         # Save the bootstrapped data
         with open(f"{peptide}/bootstrapping/bt_80_{j}_files.pkl", 'wb') as f:

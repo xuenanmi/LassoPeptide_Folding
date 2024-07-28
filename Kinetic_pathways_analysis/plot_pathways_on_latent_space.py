@@ -6,7 +6,8 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
 # Define the result directory
-resultdir = 'results/train_nsamples15000_batchsize250_lr8e-05_c1'
+peptide = 'microcinJ25'
+resultdir = f"{peptide}/results/train_nsamples5000_batchsize250_lr8e-05_c1"
 
 # Load training and testing loss
 train_score = np.load(os.path.join(resultdir, 'training_scores_save.npy'), allow_pickle=True)
@@ -16,7 +17,7 @@ test_loss = [test_score.tolist()[i][0] for i in range(100)]
 
 # Plot training and testing loss
 fig, ax = plt.subplots(dpi=300, figsize=(10, 7))
-epochs = list(range(200))
+epochs = list(range(100))
 ax.plot(epochs, train_loss, color='navy', linewidth=3, label='Training Loss')
 ax.plot(epochs, test_loss, color='orange', linewidth=3, label='Testing Loss')
 
@@ -31,12 +32,12 @@ plt.close()
 
 
 # Load latent space of each pathway and flux data
-centers = np.load(os.path.join(resultdir, 'trained_hidden_vectors_nsamples15000_batchsize250_lr8e-05_c1.npy'))
-flux = np.load('TPT_pathways_flux.npy')
+centers = np.load(os.path.join(resultdir, 'trained_hidden_vectors_nsamples5000_batchsize250_lr8e-05_c1.npy'))
+flux = np.load(f'{peptide}/microcinJ25_TPT_5000_pathways_flux.npy')
 
 # Define clustering parameters
 n_clusters = 2    # optimized from silhouette_analysis
-n_samples = 15000 # number of pathways
+n_samples = 5000 # number of pathways
 
 # Perform KMeans clustering
 km_cluster = KMeans(n_clusters=n_clusters, n_init="auto", random_state=12)

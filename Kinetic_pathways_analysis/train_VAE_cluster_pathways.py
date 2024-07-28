@@ -179,7 +179,7 @@ if use_cuda and torch.cuda.is_available():
 else:
     device = torch.device("cpu")
 
-# Feed lasso folding pathways into VAE
+# Take microcinJ25 as an examples, feed folding pathways into VAE
 ###############################################################
 peptide = 'microcinJ25'
 datadir = f"{peptide}/tpt_path_distribution/"

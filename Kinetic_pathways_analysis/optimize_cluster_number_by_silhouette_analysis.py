@@ -7,8 +7,9 @@ from sklearn.cluster import KMeans, MiniBatchKMeans
 from sklearn.datasets import make_blobs
 from sklearn.metrics import silhouette_samples, silhouette_score
 
-resultdir = 'results/train_nsamples15000_batchsize250_lr8e-05_c1'
-X = np.load(resultdir + '/trained_hidden_vectors_nsamples15000_batchsize250_lr8e-05_c1.npy')
+peptide = 'microcinJ25'
+resultdir = f"{peptide}/results/train_nsamples5000_batchsize250_lr8e-05_c1"
+X = np.load(resultdir + '/trained_hidden_vectors_nsamples5000_batchsize250_lr8e-05_c1.npy')
 range_n_clusters = [2, 3, 4, 5, 6]
 
 
@@ -27,7 +28,7 @@ for n_clusters in range_n_clusters:
 
     # Initialize the clusterer with n_clusters value and a random generator
     # seed of 10 for reproducibility.
-    clusterer = KMeans(n_clusters=n_clusters, n_init="auto", random_state=12)
+    clusterer = KMeans(n_clusters=n_clusters, n_init="auto", random_state=22)
     cluster_labels = clusterer.fit_predict(X)
 
     # The silhouette_score gives the average value for all the samples.

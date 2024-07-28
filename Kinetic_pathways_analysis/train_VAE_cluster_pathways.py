@@ -181,11 +181,12 @@ else:
 
 # Feed lasso folding pathways into VAE
 ###############################################################
-datadir = './tpt_path_distribution/'
-paths = np.load("TPT_pathways.npy",allow_pickle=True)
-#flux = np.loadtxt("")
+peptide = 'microcinJ25'
+datadir = f"{peptide}/tpt_path_distribution/"
+paths = np.load(f"{peptide}/microcinJ25_TPT_5000_pathways.npy",allow_pickle=True)
+
 # num of samples used for training
-n_samples = 15000
+n_samples = 5000
 split_ratio = 0.25
 batch_size = 250
 learning_rate = 8e-5
@@ -195,7 +196,7 @@ d_latent = 2
 epochs = 200
 c_weight = 1
 
-resultdir = 'results/train_nsamples' + str(n_samples) + '_batchsize' + str(batch_size) + '_lr' + str(learning_rate) + '_c' + str(c_weight) + '/'
+resultdir = f"{peptide}/results/train_nsamples" + str(n_samples) + "_batchsize" + str(batch_size) + "_lr" + str(learning_rate) + "_c" + str(c_weight) + "/"
 ##############################################################
 
 mkdir(resultdir)

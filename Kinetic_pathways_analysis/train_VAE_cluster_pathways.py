@@ -179,7 +179,7 @@ if use_cuda and torch.cuda.is_available():
 else:
     device = torch.device("cpu")
 
-# Take microcinJ25 as an examples, feed folding pathways into VAE
+# Feed lasso folding pathways into VAE
 ###############################################################
 peptide = 'microcinJ25'
 datadir = f"{peptide}/tpt_path_distribution/"
@@ -193,7 +193,7 @@ learning_rate = 8e-5
 weight_decay = 0
 len_vector = 7500
 d_latent = 2
-epochs = 200
+epochs = 100
 c_weight = 1
 
 resultdir = f"{peptide}/results/train_nsamples" + str(n_samples) + "_batchsize" + str(batch_size) + "_lr" + str(learning_rate) + "_c" + str(c_weight) + "/"

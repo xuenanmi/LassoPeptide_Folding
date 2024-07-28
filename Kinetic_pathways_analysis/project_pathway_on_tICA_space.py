@@ -23,8 +23,7 @@ def microstates_distribution(reassign_trajs, num_clusters, idx1, idx2, x_initial
     num_slices: number of bins to discretize along each coordinate.
     output_dir: output directory for the microstate distribution.
     """
-
-
+    os.makedirs(output_dir)
     xdelta = (x_end - x_initial) / num_slices
     ydelta = (y_end - y_initial) / num_slices
     for i in range(num_clusters):
@@ -40,18 +39,13 @@ def microstates_distribution(reassign_trajs, num_clusters, idx1, idx2, x_initial
 
         print("No {} state is completed for distribution calculation;".format(i))
 
-# List of lasso peptides
-lasso_names = [
-    'acinetodin', 'astexin-1', 'benenodin-1', 'brevunsin', 'capistruin', 'caulonodin-V', 
-    'caulosegnin-I', 'caulosegnin-II', 'chaxapeptin', 'citrocin', 'klebsidin', 'microcinJ25', 
-    'rubrivinodin', 'sphaericin', 'sphingopyxin-I', 'streptomonomicin', 'subterisin', 'ubonodin', 
-    'xanthomonin-I', 'xanthomonin-II'
-]
+# Take microcinJ25 as an example
+lasso_names = ['microcinJ25']
 
 # Corresponding parameters for each peptide
-lag_times = [250, 300, 300, 300, 250, 300, 250, 300, 300, 300, 300, 300, 350, 300, 300, 350, 300, 300, 250, 250]
-cluster_numbers = [400, 100, 100, 400, 100, 200, 500, 100, 400, 200, 400, 400, 300, 400, 700, 200, 100, 200, 300, 400]
-tic_dims = [4, 8, 8, 6, 10, 8, 8, 10, 8, 8, 10, 10, 10, 8, 6, 10, 6, 6, 10, 10]
+lag_time = [300]
+cluster_number = [400]
+tic_dim = [10]
 
 for m, peptide in enumerate(lasso_names):
     # Load features of each trajectory
@@ -67,13 +61,13 @@ for m, peptide in enumerate(lasso_names):
     
     ## Import the microstates based clustered trajectories
     ## The trajectories should have list format
-    ctrajs = np.load(f"{peptide}/MSM/MSM-cluster_kmeans_C_{cluster_numbers[i]}_lt_{lag_times[i]}_ticdim_{tic_dims[i]}.pkl", allow_pickle= True)
+    ctrajs = np.load(f"{peptide}/MSM/MSM-cluster_kmeans_C_{cluster_number[m]}_lt_{lag_time[m]}_ticdim_{tic_dim[m]}.pkl", allow_pickle= True)
     
     
     ## Set the reassign step, number of microstates, dimensionality of tICA
     reassign_trajs = {}
     for i in trange(len(ctrajs)):
-        for j in range(0, len(ctrajs[i]), step):
+        for j in range(0, len(ctrajs[i])):
             try:
                 reassign_trajs[int(ctrajs[i][j])] = np.vstack((reassign_trajs[int(ctrajs[i][j])], data_tic[i][j]))
             except KeyError:
@@ -89,14 +83,16 @@ for m, peptide in enumerate(lasso_names):
     
     
     ## Load the pathways identified by Transition Path Theory, each pathway is a sequence of state indexes
-    paths = np.load("{peptide}/TPT_pathways.npy", allow_pickle=True)
+    paths = np.load(f"{peptide}/microcinJ25_TPT_5000_pathways.npy", allow_pickle=True)
     ## Input number of pathways with largest flux to embed
-    num_pathways = 15001
+    num_pathways = 5001
     ## The directories of state distribution (in each pair of collective variables space)
     dirc1 = 'microstates_distribution_tica01'
     dirc2 = 'microstates_distribution_tica02'
     dirc3 = 'microstates_distribution_tica12'
     num_slices = 50
+    os.makedirs(f"{peptide}/tpt_path_distribution")
+
     for i in range(0, num_pathways):
         f = paths[i]
         dist = np.zeros((3*num_slices, num_slices))
